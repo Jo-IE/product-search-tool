@@ -33,14 +33,15 @@ body {
   color: var(--mainWhite);
 }
 
-.btn-red {
-  background: var(--mainRed);
+.btn-dark {
+  background: var(--mainDark);
   text-transform: capitalize;
   font-size: 0.8rem !important;
   color: var(--mainWhite);
   border-radius: 0.3rem !important;
-  border: 0.1rem solid var(--mainRed) !important;
 }
-.btn-red:hover {
+.btn-dark:hover {
   cursor: pointer;
+  color: var(--mainDark);
+  background: var(--mainCreme);
 }
