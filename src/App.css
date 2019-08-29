@@ -1,28 +1,24 @@
 :root {
-  --mainLavender: #cfc1de;
+  --mainLavender: #d8b4e2;
   --mainWhite: #fff;
   --mainDark: #262730;
-  --mainCreme: #fef6c9;
+  --mainCreme: #fde74c;
+  --mainRed: #ff5d73;
 }
 
 body {
-  font-family: "Livvic", sans-serif;
+  font-family: "Manjari", sans-serif;
   background: var(--mainWhite);
   color: var(--mainDark);
 }
 
 .text-title {
-  font-family: "Bree Serif", serif;
   letter-spacing: 0.3rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .text-blue {
   color: var(--mainBlue);
-}
-
-.text-orange {
-  color: var(--mainOrange);
 }
 
 .text-red {
@@ -35,13 +31,16 @@ body {
 
 .btn-dark {
   background: var(--mainDark);
-  text-transform: capitalize;
-  font-size: 0.8rem !important;
+  font-size: 0.8rem;
   color: var(--mainWhite);
-  border-radius: 0.3rem !important;
+  border: none;
 }
 .btn-dark:hover {
   cursor: pointer;
   color: var(--mainDark);
   background: var(--mainCreme);
+}
+
+.search {
+  border-radius: 20%;
 }

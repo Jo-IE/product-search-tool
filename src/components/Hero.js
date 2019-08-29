@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 class Hero extends Component {
-  state = {};
   render() {
     return (
       <HeroWrapper id="hero">
+        <h1 className="text-title text-center py-5">Discover cool products</h1>
         <FormWrapper>
           <div className="mx-auto text-center my-auto">
             <form className="form-inline">
-              <div className="input-group">
+              <div className="input-group ">
                 <input
-                  className="form-control "
+                  className="form-control"
                   type="search"
                   placeholder="Search Products"
                   aria-label="Search"
@@ -44,8 +44,12 @@ const FormWrapper = styled.div`
   position: relative;
   left: 34%;
   top: 35%;
+  transition: all 0.5s linear;
   display: flex;
-  opacity: 0.8;
+  @media only screen and (max-width: 750px) {
+    background-color: var(--mainCreme);
+    box-shadow: none;
+  }
 `;
 
 export default Hero;
