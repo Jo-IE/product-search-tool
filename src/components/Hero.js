@@ -5,19 +5,23 @@ class Hero extends Component {
   state = {};
   render() {
     return (
-      <HeroWrapper>
+      <HeroWrapper id="hero">
         <FormWrapper>
           <div className="mx-auto text-center my-auto">
             <form className="form-inline">
-              <input
-                className="form-control "
-                type="search"
-                placeholder="Search Products"
-                aria-label="Search"
-              />
-              <button className="btn btn-dark" type="submit">
-                <i className="fa fa-search"></i>
-              </button>
+              <div className="input-group">
+                <input
+                  className="form-control "
+                  type="search"
+                  placeholder="Search Products"
+                  aria-label="Search"
+                />
+                <div class="input-group-append">
+                  <button className="btn btn-dark" type="submit">
+                    <i className="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
             </form>
           </div>
         </FormWrapper>
@@ -33,14 +37,15 @@ const HeroWrapper = styled.div`
 
 const FormWrapper = styled.div`
   background-color: var(--mainLavender);
-  height: 50%;
-  width: 50%;
+  height: 30%;
+  width: 33%;
   border-radius: 4px;
-  box-shadow: 5px 0px var(--mainDark);
+  box-shadow: -4px 10px 1px 6px var(--mainDark);
   position: relative;
-  left: 25%;
-  top: 25%;
+  left: 34%;
+  top: 35%;
   display: flex;
+  opacity: 0.8;
 `;
 
 export default Hero;
