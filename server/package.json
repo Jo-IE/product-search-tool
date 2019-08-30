@@ -1,0 +1,31 @@
+{
+  "name": "product_hunt",
+  "version": "1.0.0",
+  "description": "server for producthunt app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jo-IE/product-search-tool.git"
+  },
+  "keywords": [
+    "producthunt",
+    "products"
+  ],
+  "author": "Jo IE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jo-IE/product-search-tool/issues"
+  },
+  "homepage": "https://github.com/Jo-IE/product-search-tool#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
