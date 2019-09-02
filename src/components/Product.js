@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import StarRatingComponent from "react-star-rating-component";
 
 class Product extends Component {
   render() {
@@ -32,12 +33,12 @@ class Product extends Component {
                   {description}
                 </p>
 
-                <p className="text-left">
-                  <span>
-                    <i className="fa fa-map-pin text-red pr-3"></i>
-                  </span>
-                  {reviewsRating}
-                </p>
+                <StarRatingComponent
+                  name={"reviews"}
+                  value={reviewsRating}
+                  starColor={"var(--mainRed)"}
+                  className="text-left"
+                />
               </div>
             </div>
           </div>
