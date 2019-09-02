@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devstart": "nodemon app.js"
+    "server": "nodemon app.js",
+    "client": "cd .. && npm start",
+    "devstart": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -22,10 +24,13 @@
   },
   "homepage": "https://github.com/Jo-IE/product-search-tool#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "express-validator": "^6.1.1"
+    "express-validator": "^6.1.1",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
+    "concurrently": "^4.1.2",
     "nodemon": "^1.19.1"
   }
 }

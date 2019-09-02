@@ -17,6 +17,10 @@ body {
   font-size: 5rem;
 }
 
+.text-subtitle {
+  text-transform: capitalize;
+}
+
 .text-blue {
   color: var(--mainBlue);
 }

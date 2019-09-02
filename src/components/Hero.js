@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+//import { Link } from "react-router-dom";
 
 class Hero extends Component {
+  componentDidMount() {
+    this.props.toggleLoading();
+  }
   render() {
     return (
       <HeroWrapper id="hero">
@@ -20,6 +24,9 @@ class Hero extends Component {
                   type="search"
                   placeholder="Search Products"
                   aria-label="Search"
+                  onBlur={() => this.props.validateProduct()}
+                  onChange={this.props.handleProductChange}
+                  value={this.props.product}
                 />
                 <div className="input-group-append">
                   <button className="btn btn-dark" type="submit">
@@ -28,6 +35,8 @@ class Hero extends Component {
                 </div>
               </div>
             </form>
+            {/* input error */}
+            <p>{this.props.inputError}</p>
           </div>
         </FormWrapper>
       </HeroWrapper>

@@ -5,20 +5,63 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
   state = {
     product: "",
-    inputError: ""
+    inputError: "",
+    productList: [],
+    loading: true
+  };
+  getProducts = () => {
+    fetch("/display-products")
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        this.setState(() => {
+          return {
+            productList: data,
+            loading: false
+          };
+        });
+      });
   };
 
+  toggleLoading = () => {
+    this.setState(() => {
+      return {
+        loading: true
+      };
+    });
+  };
   validateProduct = () => {
+    //ensure that user has typed at least one character
     this.setState(currentState => {
       return {
         inputError:
-          currentState.product.length > 1 ? null : "Please enter a product name"
+          currentState.product.length > 0 ? "" : "Please enter a product name"
+      };
+    });
+  };
+
+  handleProductChange = evt => {
+    //store product name that user types in state
+    const value = evt.target.value;
+    this.setState(() => {
+      return {
+        product: value
       };
     });
   };
   render() {
     return (
-      <ProductContext.Provider>{this.props.children}</ProductContext.Provider>
+      <ProductContext.Provider
+        value={{
+          ...this.state,
+          validateProduct: this.validateProduct,
+          handleProductChange: this.handleProductChange,
+          getProducts: this.getProducts,
+          toggleLoading: this.toggleLoading
+        }}
+      >
+        {this.props.children}
+      </ProductContext.Provider>
     );
   }
 }

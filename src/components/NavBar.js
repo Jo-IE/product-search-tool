@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 class NavBar extends Component {
   state = {};
   render() {
     return (
       <NavWrapper className="navbar ">
-        <a className="navbar-brand nav-link" href="#hero">
-          <i className="fa fa-user-secret"></i>
-        </a>
+        <Link className="navbar-brand nav-link text-title" to="/">
+          quick hunt
+          <i className="fa fa-user-secret px-3"></i>
+        </Link>
       </NavWrapper>
     );
   }

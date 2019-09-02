@@ -1,18 +1,22 @@
 import React, { Component } from "react";
 import Hero from "./Hero";
-import ProductList from "./ProductList";
+
 import { ProductConsumer } from "../context";
 
 class LandingPage extends Component {
-  state = {};
   render() {
     return (
       <ProductConsumer>
         {value => {
           return (
             <React.Fragment>
-              <Hero />
-              <ProductList />
+              <Hero
+                validateProduct={value.validateProduct}
+                inputError={value.inputError}
+                handleProductChange={value.handleProductChange}
+                product={value.product}
+                toggleLoading={value.toggleLoading}
+              />
             </React.Fragment>
           );
         }}
