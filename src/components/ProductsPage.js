@@ -17,11 +17,13 @@ class ProductsPage extends Component {
               {value.productList.length === 0 && value.loading === false ? (
                 value.hasError === false ? (
                   <div>
-                    <p className="mx-5">No results matched your search</p>
+                    <p className="mx-5 text-subtitle text-red">
+                      No results matched your search
+                    </p>
                   </div>
                 ) : (
                   <div>
-                    <p className="mx-5">
+                    <p className="mx-5 text-subtitle text-red">
                       There was a network problem getting the results, please
                       try again.
                     </p>
