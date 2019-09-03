@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-//import { Link } from "react-router-dom";
 
 class Hero extends Component {
   //set loading to true when on landing page
@@ -29,7 +28,7 @@ class Hero extends Component {
                   onChange={this.props.handleProductChange}
                   value={this.props.product}
                 />
-                <div className="input-group-append">
+                <div className="input-group-append ">
                   <button className="btn btn-dark" type="submit">
                     <i className="fa fa-search"></i>
                   </button>

@@ -11,11 +11,10 @@ class ProductProvider extends Component {
     hasError: false
   };
   getProducts = () => {
+    // set timeout to throw error on network time out
     function timeout(ms, promise) {
       return new Promise(function(resolve, reject) {
         setTimeout(function() {
-          /*res.redirect("/");
-          res.end();*/
           reject(new Error("timeout"));
         }, ms);
         promise.then(resolve, reject);
@@ -24,16 +23,6 @@ class ProductProvider extends Component {
 
     timeout(10000, fetch("/display-products"))
       .then(res => {
-        /*if (res.message === "error") {
-          //response has error, set error to true, loading to false
-
-          this.setState(() => {
-            return {
-              hasError: true,
-              loading: false
-            };
-          });
-        }*/
         return res.json();
       })
       .then(data => {
@@ -45,7 +34,7 @@ class ProductProvider extends Component {
             hasError: false
           };
         });
-      })
+      }) //handle error, stop loader from spinning
       .catch(err => {
         this.setState(() => {
           return {
@@ -68,7 +57,9 @@ class ProductProvider extends Component {
     this.setState(currentState => {
       return {
         inputError:
-          currentState.product.length > 0 ? "" : "Please enter a product name"
+          currentState.product.length > 0
+            ? ""
+            : "Please enter a topic to search"
       };
     });
   };

@@ -15,13 +15,9 @@ class Product extends Component {
     } = this.props.product.node;
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
-        <div className="card">
+        <div className="card h-100">
           <a target="_blank" rel="noopener noreferrer" href={url}>
-            <img
-              src={thumbnail.url}
-              alt="product"
-              className="card-img-top h-50"
-            />
+            <img src={thumbnail.url} alt="product" className="card-img-top" />
           </a>
 
           <div className="card-body d-flex justify-content-between">
@@ -37,16 +33,18 @@ class Product extends Component {
                   className="text-left"
                 />
 
-                <p>
+                <p className="">
                   <span className="text-red">Description: </span>
                   {description}
                 </p>
-                <p>
-                  <span className="text-red pr-3">
-                    <i className="fa fa-vote-yea "></i>
-                  </span>
-                  {votesCount} votes
-                </p>
+                <div className="card-footer">
+                  <p>
+                    <span className="text-red pr-3">
+                      <i className="fa fa-vote-yea "></i>
+                    </span>
+                    {votesCount} votes
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -61,24 +59,14 @@ const ProductWrapper = styled.div`
     border-color: transparent;
     transition: all 1s linear;
     overflow-x: auto;
-    max-width: 100%;
-    word-wrap: break-word;
   }
-  .card-text {
-    word-wrap: break-word;
-  }
+
   .card-footer {
     background: transparent;
     border-top: transparent;
     transition: all 1s linear;
   }
-  .img-container {
-    position: relative;
-    overflow: hidden;
-  }
-  .img-container:hover .card-img-top {
-    transform: scale(1.2);
-  }
+
   .card-img-top {
     transition: all 0.5s linear;
   }
@@ -90,10 +78,6 @@ const ProductWrapper = styled.div`
     .card-footer {
       background: rgba(247, 247, 247);
     }
-  }
-
-  .img-container:hover {
-    transform: translate(0, 0);
   }
 `;
 
