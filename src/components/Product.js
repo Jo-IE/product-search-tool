@@ -33,7 +33,7 @@ class Product extends Component {
                   className="text-left"
                 />
 
-                <p>
+                <p className="card-text">
                   <span className="text-red">Description: </span>
                   {description}
                 </p>
@@ -60,11 +60,15 @@ const ProductWrapper = styled.div`
     transition: all 1s linear;
     overflow-x: auto;
   }
+  .card-text {
+    font-size: 1.1rem;
+  }
 
   .card-footer {
     background: transparent;
     border-top: transparent;
     transition: all 1s linear;
+    margin-bottom: 0;
   }
 
   .card-img-top {

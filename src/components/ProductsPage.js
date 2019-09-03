@@ -24,8 +24,7 @@ class ProductsPage extends Component {
                 ) : (
                   <div>
                     <p className="mx-5 text-subtitle">
-                      A network problem was encountered while getting the
-                      results, please try again.
+                      something went wrong, please try again.
                     </p>
                   </div>
                 )
