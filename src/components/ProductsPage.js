@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { ProductConsumer } from "../context";
 import ProductList from "./ProductList";
 import { Link } from "react-router-dom";
+import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
 
 class ProductsPage extends Component {
   render() {
@@ -10,6 +11,7 @@ class ProductsPage extends Component {
         {value => {
           return (
             <React.Fragment>
+              <ScrollUpButton />
               <Link to="/">
                 <p className="text-subtitle my-5 mx-5">back to search</p>
               </Link>
