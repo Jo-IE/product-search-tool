@@ -17,15 +17,15 @@ class ProductsPage extends Component {
               {value.productList.length === 0 && value.loading === false ? (
                 value.hasError === false ? (
                   <div>
-                    <p className="mx-5 text-subtitle text-red">
+                    <p className="mx-5 text-subtitle">
                       No results matched your search
                     </p>
                   </div>
                 ) : (
                   <div>
-                    <p className="mx-5 text-subtitle text-red">
-                      There was a network problem getting the results, please
-                      try again.
+                    <p className="mx-5 text-subtitle">
+                      A network problem was encountered while getting the
+                      results, please try again.
                     </p>
                   </div>
                 )
