@@ -19,7 +19,7 @@ router.post(
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      // There are errors. Do sth
+      // There are errors, remain on landing page
       //res.send(errors);
       res.redirect("/");
     } else {
@@ -57,8 +57,10 @@ router.get("/display-products", (req, res) => {
             node{
               id
               name
+              tagline
               description
               url
+              votesCount
               thumbnail{
                 type
                 url

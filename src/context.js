@@ -7,11 +7,23 @@ class ProductProvider extends Component {
     product: "",
     inputError: "",
     productList: [],
-    loading: true
+    loading: true,
+    error: false
   };
   getProducts = () => {
     fetch("/display-products")
-      .then(res => res.json())
+      .then(res => {
+        if (res.status !== 200) {
+          //response has error, set error to true, loading to false
+          this.setState(() => {
+            return {
+              error: true,
+              loading: false
+            };
+          });
+        }
+        return res.json();
+      })
       .then(data => {
         console.log(data);
         this.setState(() => {

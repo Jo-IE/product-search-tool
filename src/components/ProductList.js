@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ProductConsumer } from "../context";
+
 import Product from "./Product";
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/core";
@@ -20,7 +20,7 @@ class ProductList extends Component {
                   css={override}
                   sizeUnit={"px"}
                   color={"var(--mainLavender)"}
-                  size={50}
+                  size={100}
                   loading={this.props.value.loading}
                 />
               ) : (
@@ -37,11 +37,9 @@ class ProductList extends Component {
 }
 
 const override = css`
-  color: var(--mainLavender;
   display: block;
-  margin: 70px;
+  left: 50%;
   position: relative;
-  margin-left: 50%;
 `;
 
 export default ProductList;

@@ -8,9 +8,10 @@ class Product extends Component {
       name,
       description,
       reviewsRating,
+      tagline,
+      votesCount,
       thumbnail,
-      url,
-      website
+      url
     } = this.props.product.node;
     return (
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
@@ -26,12 +27,8 @@ class Product extends Component {
           <div className="card-body d-flex justify-content-between">
             <div className="row">
               <div className="col text-left">
-                <p className="text-blue text-subtitle">{name}</p>
-
-                <p>
-                  <span className="text-blue">Description: </span>
-                  {description}
-                </p>
+                <p className=" text-subtitle">{name}</p>
+                <p className="text-muted">{tagline}</p>
 
                 <StarRatingComponent
                   name={"reviews"}
@@ -39,6 +36,17 @@ class Product extends Component {
                   starColor={"var(--mainRed)"}
                   className="text-left"
                 />
+
+                <p>
+                  <span className="text-red">Description: </span>
+                  {description}
+                </p>
+                <p>
+                  <span className="text-red pr-3">
+                    <i className="fa fa-vote-yea "></i>
+                  </span>
+                  {votesCount} votes
+                </p>
               </div>
             </div>
           </div>
@@ -52,7 +60,9 @@ const ProductWrapper = styled.div`
   .card {
     border-color: transparent;
     transition: all 1s linear;
-    overflow: auto;
+    overflow-x: auto;
+    max-width: 100%;
+    word-wrap: break-word;
   }
   .card-text {
     word-wrap: break-word;

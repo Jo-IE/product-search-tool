@@ -19,10 +19,7 @@ body {
 
 .text-subtitle {
   text-transform: capitalize;
-}
-
-.text-blue {
-  color: var(--mainBlue);
+  font-size: 1.5rem;
 }
 
 .text-red {
@@ -42,7 +39,7 @@ body {
 .btn-dark:hover {
   cursor: pointer;
   color: var(--mainDark);
-  background: var(--mainCreme);
+  background: var(--mainRed);
 }
 
 .search {

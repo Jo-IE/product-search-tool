@@ -3,6 +3,7 @@ import styled from "styled-components";
 //import { Link } from "react-router-dom";
 
 class Hero extends Component {
+  //set loading to true when on landing page
   componentDidMount() {
     this.props.toggleLoading();
   }
