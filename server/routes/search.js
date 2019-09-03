@@ -16,7 +16,7 @@ router.post(
       .trim()
       .escape()
   ],
-  (req, res, next) => {
+  (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       // There are errors, remain on landing page
@@ -31,7 +31,6 @@ router.post(
 );
 
 router.get("/display-products", (req, res) => {
-  //res.send("hello");
   const API_Key =
     "007bd065572b0831c9ba2b7d72b546613329d0cd1a459c9bcaf8cf93d503b3a6";
 
@@ -79,7 +78,9 @@ router.get("/display-products", (req, res) => {
       console.log(json);
       res.send(json.data.posts.edges);
     })
-    .catch(err => res.redirect("/error"));
+    .catch(err => {
+      console.log(err);
+    });
 });
 
 module.exports = router;

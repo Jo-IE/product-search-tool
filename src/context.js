@@ -8,20 +8,32 @@ class ProductProvider extends Component {
     inputError: "",
     productList: [],
     loading: true,
-    error: false
+    hasError: false
   };
   getProducts = () => {
-    fetch("/display-products")
+    function timeout(ms, promise) {
+      return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          /*res.redirect("/");
+          res.end();*/
+          reject(new Error("timeout"));
+        }, ms);
+        promise.then(resolve, reject);
+      });
+    }
+
+    timeout(10000, fetch("/display-products"))
       .then(res => {
-        if (res.status !== 200) {
+        /*if (res.message === "error") {
           //response has error, set error to true, loading to false
+
           this.setState(() => {
             return {
-              error: true,
+              hasError: true,
               loading: false
             };
           });
-        }
+        }*/
         return res.json();
       })
       .then(data => {
@@ -29,7 +41,16 @@ class ProductProvider extends Component {
         this.setState(() => {
           return {
             productList: data,
-            loading: false
+            loading: false,
+            hasError: false
+          };
+        });
+      })
+      .catch(err => {
+        this.setState(() => {
+          return {
+            loading: false,
+            hasError: true
           };
         });
       });

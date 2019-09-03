@@ -6,7 +6,6 @@ import Default from "./components/Default";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import ProductsPage from "./components/ProductsPage";
-import ErrorPage from "./components/Errorpage";
 
 class App extends Component {
   state = {};
@@ -17,7 +16,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/search" component={ProductsPage} />
-          <Route path="/error" component={ErrorPage} />
+
           <Route component={Default} />
         </Switch>
       </React.Fragment>
