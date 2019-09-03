@@ -18,11 +18,13 @@ This app uses the Product Hunt API to enable the user to search for products by 
 
 5. Go to the Product Hunt website, create an account and/or login.
 
-6. Navigate to API Dashboard and click on Create Application.
+6. Navigate to API Dashboard and click on Add an Application.
 
 7. Enter an App Name and redirect URI (`localhost:3000/` will be sufficient in this case)
 
 8. Get your access token (public scope) by entering this command into the terminal.
+
+   `curl --header "Content-Type: application/json" \ --request POST \ --data '{"client_id":"YOUR_API_KEY_HERE","client_secret":"YOUR_API_SECRET_HERE", "grant_type": "client_credentials"}' \ https://api.producthunt.com/v2/oauth/token`
 
 9) Alternatively you can generate a developer's token on your application's page.
 
