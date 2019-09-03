@@ -22,7 +22,7 @@ class Hero extends Component {
                   className="form-control"
                   name="productname"
                   type="search"
-                  placeholder="Search Products"
+                  placeholder="Search by Topic"
                   aria-label="Search"
                   onBlur={() => this.props.validateProduct()}
                   onChange={this.props.handleProductChange}
