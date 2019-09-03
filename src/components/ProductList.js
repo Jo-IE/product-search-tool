@@ -9,7 +9,6 @@ class ProductList extends Component {
     this.props.value.getProducts();
   }
   render() {
-    console.log(this.props.value);
     return (
       <React.Fragment>
         <div className="py-5">

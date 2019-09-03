@@ -66,7 +66,7 @@ router.get("/display-products", (req, res) => {
       return res.json();
     })
     .then(json => {
-      console.log(json);
+      debug(json);
       res.send(json.data.posts.edges);
     })
     .catch(err => {
