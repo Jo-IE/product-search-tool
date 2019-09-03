@@ -42,7 +42,3 @@ body {
   color: var(--mainDark);
   background: var(--mainRed);
 }
-
-.search {
-  border-radius: 20%;
-}

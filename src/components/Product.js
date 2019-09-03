@@ -33,7 +33,7 @@ class Product extends Component {
                   className="text-left"
                 />
 
-                <p className="">
+                <p>
                   <span className="text-red">Description: </span>
                   {description}
                 </p>

@@ -8,8 +8,8 @@ class Hero extends Component {
   }
   render() {
     return (
-      <HeroWrapper id="hero">
-        <h1 className="text-title text-center py-5">Discover cool products</h1>
+      <HeroWrapper>
+        <h1 className="text-title text-center py-5 ">Discover cool products</h1>
         <FormWrapper>
           <div className="mx-auto text-center my-auto">
             <form
@@ -46,12 +46,14 @@ class Hero extends Component {
 
 const HeroWrapper = styled.div`
   background-color: var(--mainCreme);
-  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 0;
 `;
 
 const FormWrapper = styled.div`
   background-color: var(--mainLavender);
-  height: 30%;
+  min-height: 30vh;
   width: 33%;
   border-radius: 4px;
   box-shadow: -4px 10px 1px 6px var(--mainDark);

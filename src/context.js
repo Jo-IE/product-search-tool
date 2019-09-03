@@ -3,14 +3,22 @@ import React, { Component } from "react";
 const ProductContext = React.createContext();
 
 class ProductProvider extends Component {
-  state = {
-    product: "",
-    inputError: "",
-    productList: [],
-    loading: true,
-    hasError: false
-  };
-  getProducts = () => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      product: "",
+      inputError: "",
+      productList: [],
+      loading: true,
+      hasError: false
+    };
+    this.getProducts = this.getProducts.bind(this);
+    this.toggleLoading = this.toggleLoading.bind(this);
+    this.validateProduct = this.validateProduct.bind(this);
+    this.handleProductChange = this.handleProductChange.bind(this);
+  }
+
+  getProducts() {
     // set timeout to throw error on network time out
     function timeout(ms, promise) {
       return new Promise(function(resolve, reject) {
@@ -43,16 +51,16 @@ class ProductProvider extends Component {
           };
         });
       });
-  };
+  }
 
-  toggleLoading = () => {
+  toggleLoading() {
     this.setState(() => {
       return {
         loading: true
       };
     });
-  };
-  validateProduct = () => {
+  }
+  validateProduct() {
     //ensure that user has typed at least one character
     this.setState(currentState => {
       return {
@@ -62,9 +70,9 @@ class ProductProvider extends Component {
             : "Please enter a topic to search"
       };
     });
-  };
+  }
 
-  handleProductChange = evt => {
+  handleProductChange(evt) {
     //store product name that user types in state
     const value = evt.target.value;
     this.setState(() => {
@@ -72,7 +80,7 @@ class ProductProvider extends Component {
         product: value
       };
     });
-  };
+  }
   render() {
     return (
       <ProductContext.Provider
