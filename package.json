@@ -2,12 +2,12 @@
   "name": "producthunt",
   "version": "0.1.0",
   "engines": {
-    "node": "10.15.3"
+    "node": "10.15.3",
+    "npm": "6.10.3"
   },
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "concurrently": "^4.1.2",
     "http-proxy-middleware": "^0.19.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -24,7 +24,8 @@
     "build": "node node_modules/react-scripts/scripts/build.js",
     "test": "node node_modules/react-scripts/scripts/test.js",
     "eject": "node node_modules/react-scripts/scripts/eject.js",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "devstart": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "cd server && npx nodemon app.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2"
   }
 }
