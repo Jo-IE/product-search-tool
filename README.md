@@ -12,9 +12,9 @@ This app uses the Product Hunt API to enable the user to search for products by 
 
 2. Navigate to the repo's directory using `cd producthunt`
 
-3. Run `npm install` to install the client dependencies.
+3. Run `npm install` to install the server dependencies.
 
-4. Navigate to the server directory `cd server` and run `npm install` to install server dependencies.
+4. Navigate to the server directory `cd client` and run `npm install` to install client dependencies.
 
 5. Go to the Product Hunt website, create an account and/or login.
 
@@ -28,8 +28,8 @@ This app uses the Product Hunt API to enable the user to search for products by 
 
 9) Alternatively you can generate a developer's token on your application's page.
 
-10) Save your access token in a `.env` file as `ACCESS_TOKEN`.
+10) Save your access token in a `.env` file in the project root as `ACCESS_TOKEN`.
 
-11) While still in the server directory, run the start command to start the client and server:
+11) While in the root directory, run the start command to start the client and server:
 
     `npm run devstart`
