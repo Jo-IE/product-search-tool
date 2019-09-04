@@ -8,6 +8,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "server": "npx nodemon app.js",
     "client": "cd client && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
