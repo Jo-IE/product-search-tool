@@ -1,48 +1,42 @@
 {
-  "name": "producthunt",
-  "version": "0.1.0",
+  "name": "product_hunt",
+  "version": "1.0.0",
   "engines": {
-    "node": "10.15.3",
-    "npm": "6.10.3"
+    "node": "10.15.3"
   },
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "http-proxy-middleware": "^0.19.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1",
-    "react-scroll-up-button": "^1.6.4",
-    "react-spinners": "^0.6.1",
-    "react-star-rating-component": "^1.4.1",
-    "styled-components": "^4.3.2"
-  },
+  "description": "server for producthunt app",
+  "main": "app.js",
   "scripts": {
-    "client": "node node_modules/react-scripts/scripts/start.js",
-    "server": "cd server && npx nodemon app.js",
-    "build": "node node_modules/react-scripts/scripts/build.js",
-    "test": "node node_modules/react-scripts/scripts/test.js",
-    "eject": "node node_modules/react-scripts/scripts/eject.js",
-    "devstart": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "start": "cd server && node app.js"
+    "start": "node app.js",
+    "server": "npx nodemon app.js",
+    "client": "cd client && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jo-IE/product-search-tool.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [
+    "producthunt",
+    "products"
+  ],
+  "author": "Jo IE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jo-IE/product-search-tool/issues"
+  },
+  "homepage": "https://github.com/Jo-IE/product-search-tool#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "debug": "^4.1.1",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "concurrently": "^4.1.2"
+    "concurrently": "^4.1.2",
+    "nodemon": "^1.19.1"
   }
 }

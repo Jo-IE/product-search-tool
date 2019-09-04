@@ -6,7 +6,7 @@ const router = require("./routes/search");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 
-//app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", router);

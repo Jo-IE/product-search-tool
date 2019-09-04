@@ -1,0 +1,42 @@
+{
+  "name": "producthunt",
+  "version": "0.1.0",
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.10.3"
+  },
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "http-proxy-middleware": "^0.19.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "react-scroll-up-button": "^1.6.4",
+    "react-spinners": "^0.6.1",
+    "react-star-rating-component": "^1.4.1",
+    "styled-components": "^4.3.2"
+  },
+  "scripts": {
+    "start": "node node_modules/react-scripts/scripts/start.js",
+    "build": "node node_modules/react-scripts/scripts/build.js",
+    "test": "node node_modules/react-scripts/scripts/test.js",
+    "eject": "node node_modules/react-scripts/scripts/eject.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
