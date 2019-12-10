@@ -1,6 +1,6 @@
 # Product Search Tool (Quick Hunt)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://quickhunt.herokuapp.com/
 
 ## Functionality
 
